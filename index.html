@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous Vision - Eye Care Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #E85D9A;
+            --light-pink: #F5B5D8;
+            --pale-pink: #FDE8F0;
+            --deep-pink: #C74A7F;
+            --white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --accent-gold: #D4A574;
+            --gradient-pink: linear-gradient(135deg, #E85D9A 0%, #D46CA6 100%);
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(232, 93, 154, 0.1);
+            padding: 1.2rem 2rem;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            font-family: 'Poppins', sans-serif;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-pink);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--gradient-pink);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(232, 93, 154, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232, 93, 154, 0.4);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--pale-pink) 0%, #F0E8F5 50%, #E8F5FF 100%);
+            overflow: hidden;
+            margin-top: 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232, 93, 154, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 170, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--primary-pink);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--deep-pink) 0%, var(--primary-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .secondary-button {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-pink);
+            background: transparent;
+            color: var(--primary-pink);
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: var(--primary-pink);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO BANNER IMAGE ===== */
+        .hero-image {
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            width: 500px;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><radialGradient id="eye-gradient" cx="50%25" cy="50%25" r="50%25"><stop offset="0%25" style="stop-color:%23E85D9A;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23D46CA6;stop-opacity:0.6" /></radialGradient></defs><circle cx="200" cy="200" r="180" fill="url(%23eye-gradient)" opacity="0.8"/><circle cx="150" cy="180" r="60" fill="%23FFFFFF" opacity="0.9"/><circle cx="250" cy="180" r="60" fill="%23FFFFFF" opacity="0.9"/><circle cx="150" cy="180" r="35" fill="%231A1A1A"/><circle cx="250" cy="180" r="35" fill="%231A1A1A"/><circle cx="160" cy="170" r="12" fill="%23FFFFFF"/><circle cx="260" cy="170" r="12" fill="%23FFFFFF"/></svg>') no-repeat center;
+            background-size: contain;
+            animation: slideInRight 0.8s ease-out, pulse 4s ease-in-out infinite;
+            animation-delay: 0.3s, 2s;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--pale-pink) 0%, var(--white) 100%);
+            border-radius: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .stat {
+            text-align: center;
+            animation: slideUp 0.6s ease-out backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.1s; }
+        .stat:nth-child(2) { animation-delay: 0.2s; }
+        .stat:nth-child(3) { animation-delay: 0.3s; }
+        .stat:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== MAIN CONTENT CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--pale-pink);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-pink);
+            transition: left 0.4s ease;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-pink);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(232, 93, 154, 0.15);
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-pink);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .service-card a {
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-card a:hover {
+            margin-left: 0.5rem;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-us {
+            background: linear-gradient(135deg, var(--pale-pink) 0%, #F5E8F5 100%);
+            padding: 4rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(232, 93, 154, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(232, 93, 154, 0.15);
+        }
+
+        .feature h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-pink);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+            overflow: hidden;
+            border-radius: 15px;
+            background: var(--white);
+            border: 2px solid var(--pale-pink);
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--primary-pink);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(232, 93, 154, 0.2);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--light-pink), var(--pale-pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .team-info {
+            padding: 2rem;
+        }
+
+        .team-quote {
+            font-style: italic;
+            color: var(--primary-pink);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .team-title {
+            color: var(--primary-pink);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-pink);
+            box-shadow: 0 5px 20px rgba(232, 93, 154, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(232, 93, 154, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-pink);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: var(--gradient-pink);
+            color: var(--white);
+            padding: 4rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button-white {
+            background: var(--white);
+            color: var(--primary-pink);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--light-pink);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--light-pink);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MODAL STYLES ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s ease;
+        }
+
+        .close-modal {
+            color: var(--text-light);
+            float: right;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--primary-pink);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-pink);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--pale-pink);
+            border-radius: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 0 3px rgba(232, 93, 154, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--gradient-pink);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(232, 93, 154, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #E85D9A, #D46CA6);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+
+        .success-message h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Luminous Vision</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#team">Team</a>
+                <a href="#testimonials">Stories</a>
+                <button class="cta-button" onclick="openBookingModal()">Book Now</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Clear Vision, Bright Future</div>
+            <h1>Luminous Vision</h1>
+            <p>Experience world-class eye care in a serene, modern environment. Your vision, our passion.</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="openBookingModal()">Schedule Vision Exam</button>
+                <button class="secondary-button">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- STATS SECTION -->
+        <section class="stats">
+            <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8k+</div>
+                <div class="stat-label">Happy Patients</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Google Reviews</div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section" id="services">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive eye care for every stage of life</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👁️</div>
+                    <h3>Vision Correction</h3>
+                    <p>Comprehensive exams and prescriptions for glasses and contacts with advanced digital testing.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Laser Surgery</h3>
+                    <p>LASIK and PRK procedures with FDA-approved technology for permanent vision correction.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Cataract Surgery</h3>
+                    <p>Advanced intraocular lens implants and minimally invasive surgical techniques for optimal results.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Pediatric Eye Care</h3>
+                    <p>Specialized care for children with early detection of developmental eye conditions.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Disease Management</h3>
+                    <p>Treatment and management of glaucoma, diabetic retinopathy, and macular degeneration.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👓</div>
+                    <h3>Designer Eyewear</h3>
+                    <p>Curated collection of premium frames from renowned brands worldwide.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="section" id="about">
+            <div class="why-us">
+                <h2 class="section-title">Why Choose Luminous Vision</h2>
+                <p class="section-subtitle">Technology meets compassionate eye care</p>
+                
+                <div class="why-us-grid">
+                    <div class="feature">
+                        <h4>Advanced Diagnostics</h4>
+                        <p>OCT imaging, visual field testing, and retinal analysis for precise diagnosis and early disease detection.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Personalized Treatment</h4>
+                        <p>Customized care plans tailored to your unique vision needs and lifestyle requirements.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Comfortable Experience</h4>
+                        <p>Soothing ambiance with anxiety-reducing protocols to make every visit pleasant and relaxing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section class="section" id="team">
+            <h2 class="section-title">Meet Our Eye Care Specialists</h2>
+            <p class="section-subtitle">Renowned ophthalmologists dedicated to your vision</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">👁️‍🗨️</div>
+                    <div class="team-info">
+                        <div class="team-quote">"Your vision is your window to the world"</div>
+                        <h3>Dr. Priya Sharma</h3>
+                        <div class="team-title">Chief Ophthalmologist</div>
+                        <p class="team-bio">Harvard Medical School graduate with 20+ years in refractive surgery and cataract management.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">🔬</div>
+                    <div class="team-info">
+                        <div class="team-quote">"Clarity brings confidence"</div>
+                        <h3>Dr. Michael Wong</h3>
+                        <div class="team-title">Retinal Specialist</div>
+                        <p class="team-bio">Expert in diabetic eye disease and macular degeneration with specialized training from Johns Hopkins.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">✨</div>
+                    <div class="team-info">
+                        <div class="team-quote">"Young eyes, bright futures"</div>
+                        <h3>Dr. Sofia Martinez</h3>
+                        <div class="team-title">Pediatric Optometrist</div>
+                        <p class="team-bio">Passionate about children's vision development and specializes in myopia management strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="section" id="testimonials">
+            <h2 class="section-title">Patient Stories</h2>
+            <p class="section-subtitle">Real experiences from our valued patients</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I couldn't read clearly anymore, and my quality of life was suffering. The LASIK procedure at Luminous Vision changed everything. Now I see better than ever!"</p>
+                    <div class="testimonial-author">Sarah Chen</div>
+                    <div class="testimonial-role">LASIK Patient</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Dr. Wong caught my diabetic retinopathy early. His expertise and compassionate care prevented serious vision loss. I'm forever grateful."</p>
+                    <div class="testimonial-author">James Patterson</div>
+                    <div class="testimonial-role">Diabetic Care Patient</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Taking my twins to Dr. Martinez is always a positive experience. She makes them feel comfortable and explains everything in a way they understand."</p>
+                    <div class="testimonial-author">Amanda Rodriguez</div>
+                    <div class="testimonial-role">Pediatric Patient Parent</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <h2>Ready for Crystal Clear Vision?</h2>
+            <p>Schedule your comprehensive eye exam today and discover how we can enhance your sight and your life.</p>
+            <button class="cta-button-white" onclick="openBookingModal()">Book Your Exam Now</button>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;"><a href="tel:+1234567890" style="color: inherit; text-decoration: none;">(123) 456-7890</a></p>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Luminous Vision</h4>
+                    <p style="margin-bottom: 1rem; opacity: 0.8;">Premium eye care with cutting-edge technology and compassionate specialists.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Meet the Team</a></li>
+                        <li><a href="#">Patient Portal</a></li>
+                        <li><a href="#">Insurance Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Vision Correction</a></li>
+                        <li><a href="#">Laser Surgery</a></li>
+                        <li><a href="#">Cataract Surgery</a></li>
+                        <li><a href="#">Disease Management</a></li>
+                        <li><a href="#">Pediatric Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#">123 Vision Lane, Suite 200<br>Clarity City, CC 90210</a></li>
+                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
+                        <li><a href="mailto:hello@luminousvision.com">hello@luminousvision.com</a></li>
+                        <li>Mon-Fri: 9am - 6pm<br>Sat: 10am - 3pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Luminous Vision Eye Care. All rights reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <div id="bookingForm">
+                <h2>Schedule Your Vision Exam</h2>
+                <form onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Service Needed</label>
+                        <select required>
+                            <option value="">Select a service</option>
+                            <option value="exam">Comprehensive Eye Exam</option>
+                            <option value="laser">LASIK Consultation</option>
+                            <option value="cataract">Cataract Evaluation</option>
+                            <option value="pediatric">Pediatric Exam</option>
+                            <option value="disease">Disease Management</option>
+                            <option value="glasses">Glasses Fitting</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <select required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (9am - 12pm)</option>
+                            <option value="afternoon">Afternoon (12pm - 3pm)</option>
+                            <option value="evening">Evening (3pm - 6pm)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Special Requests / Eye Concerns</label>
+                        <textarea rows="3" placeholder="Tell us about any specific concerns..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Confirm Booking Request</button>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; text-align: center;">Your information is secure and HIPAA protected</p>
+                </form>
+            </div>
+            <div class="success-message" id="successMessage">
+                <h3>✓ Booking Confirmed!</h3>
+                <p>We've sent a confirmation to your email. See you soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('bookingForm').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function submitBooking(event) {
+            event.preventDefault();
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            setTimeout(() => {
+                closeBookingModal();
+            }, 3000);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
+</body>
+</html>
